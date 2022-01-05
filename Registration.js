@@ -6,7 +6,7 @@ formInput.forEach((ele)=>{
     if(e.type!='radio'){
       let errBoard = e.nextElementSibling;
       if(e.value==""){
-        errBoard.style.display="block";
+        // errBoard.style.display="block";
         e.value.innerHTML="error";
       }
       else errBoard.style.display="none";
