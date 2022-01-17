@@ -13,8 +13,13 @@
       crossorigin="anonymous"
     />
 
+    <link rel="stylesheet" href="Registration.css">
+
     <title>Registration form</title>
+
   </head>
+
+
   <body>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
@@ -36,9 +41,11 @@
             <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5ZM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46Z"/>
             <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46l-3.892-1.556Z"/>
           </svg></h1></div>
-          <form class="row g-3">
+
+          <form class="row g-3" name="myForm" id="myForm">
 
             <div class="col-md-6 form-floating">
+              
               <input
                 type="text"
                 class="form-control"
@@ -46,8 +53,8 @@
                 id="fname"
                 placeholder="Fname"
               />
-              <label for="fname">First Name</label>
-              <span class="fnameError"></span>
+              <label for="fname">First Name*</label>
+              <span class="error"></span>
             </div>
 
             <div class="col-md-6 form-floating">
@@ -58,12 +65,13 @@
                 id="lname"
                 placeholder="Lname"
               />
-              <label for="lname">Last Name</label>
-              <span class="lnameError"></span>
+              <label for="lname">Last Name*</label>
+              <span class="error"></span>
             </div>
 
             
             <div class="col-md-6 form-floating">
+              
               <input
               type="password"
                 class="form-control"
@@ -71,12 +79,13 @@
                 id="passwd"
                 placeholder="Password"
                 />
-                <label for="passwd">Password</label>
-                <span class="passwordError"></span>
+                 <label for="passwd">Password </label>
+                <span class="error"></span>
               </div>
               
               
               <div class="col-md-6 form-floating">
+                
                 <input
                 type="password"
                 class="form-control"
@@ -84,8 +93,8 @@
                 id="repasswd"
                 placeholder="Password"
                 />
-                <label for="repasswd">Re-enter Password</label>
-                <span class="repasswordError"></span>
+                <label for="repasswd">Confirm Password</label>
+                <span class="error"></span>
               </div>
               
               <div class="col-md-12 form-floating">
@@ -96,8 +105,9 @@
                   id="email"
                   placeholder="name@example.com"
                 />
-                <label for="email">Email address</label>
-                <span class="emailError"></span>
+                <label for="email">Email address*</label>
+
+                <span class="error"></span>
               </div>
 
               <div class="col-md-12 form-floating">
@@ -108,8 +118,8 @@
                 id="number"
                 placeholder="***"
                 />
-                <label for="number">Mobile No</label>
-                <span class="numberError"></span>
+                <label for="number">Mobile No*</label>
+                <span class="error"></span>
               </div>
 
             <div class="col-12">
@@ -118,7 +128,8 @@
                 type="text"
                 class="form-control"
                 id="inputAddress"
-                placeholder="Saraswati Nagar Ward no-12, Gopalganj Bihar"
+                class="input"
+                placeholder="Saraswati Nagar Ward no-12, Gopalganj Bihar(required)"
               />
               <span class="addressError1"></span>
             </div>
@@ -128,26 +139,40 @@
                 type="text"
                 class="form-control"
                 id="inputAddress2"
-                placeholder="Apartment, studio, or floor"
+                placeholder="Apartment, studio, or floor(required)"
               />
               <span class="addressError2"></span>
             </div>
 
             <div class="col-md-6">
               <label for="inputCity" class="form-label">City</label>
-              <input type="text" class="form-control" id="inputCity" placeholder="Gopalganj" />
+              <input
+               type="text"
+               class="form-control" 
+               id="inputCity" 
+               placeholder="Gopalganj(required)" />
             </div>
+
             <div class="col-md-4">
               <label for="inputState" class="form-label">State</label>
               <select id="inputState" class="form-select">
-                <option selected>Bihar</option>
+                <option value="Bihar" selected>Bihar</option>
+                <option value="Gujarat">Gujarat</option>
                 <option>...</option>
               </select>
             </div>
+
             <div class="col-md-2">
               <label for="inputZip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="inputZip" placeholder="841428" />
+              <input 
+              type="text" 
+              class="form-control" 
+              id="inputZip" 
+              placeholder="841428(required)" />
             </div>
+
+            <textarea placeholder="Discussion forum(required)" cols="10" rows="5"></textarea>
+
             <div class="col-12">
               <div class="form-check">
                 <input
@@ -161,45 +186,23 @@
               </div>
             </div>
 
-
             <div class="col-12 text-center">
-              <button type="submit" class="btn btn-outline-success m-1 bg-gradient">Register<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+
+              <input type="submit" id="submit" class="btn btn-outline-success m-1 bg-gradient">
+
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
                 <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
-              </svg></button>
+                </svg> -->
+
             </div>
           </form>
         </div>
 
-        
 
       </div>
     </div>
 
-    <style>
-      body {
-         /* background-image:url('brett-jordan-YKBy0VM53Gc-unsplash.jpg'); */
-        background-color: rgb(56, 56, 141);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-      }
-
-      /* div .left{
-        image-resolution:inherit;
-        background-repeat: no-repeat;
-        background-image: url('brett-jordan-YKBy0VM53Gc-unsplash.jpg');
-      } */
-
-      .form {
-        background-color: rgb(118, 171, 224);
-        border: 5px;
-        border-style:ridge;
-        border-spacing: 10px;
-        border-color: rgb(116, 106, 126) rgb(12, 15, 20);
-        box-shadow: inset rgb(129, 161, 161) 5px 2px 1px 3px;
-      }
-    </style>
 
     <script src="Registration.js"></script>
 

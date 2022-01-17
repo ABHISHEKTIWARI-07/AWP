@@ -1,0 +1,32 @@
+body {
+    /* background-image:url('brett-jordan-YKBy0VM53Gc-unsplash.jpg'); */
+   background-color: rgb(56, 56, 141);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+ }
+
+ /* div .left{
+   image-resolution:inherit;
+   background-repeat: no-repeat;
+   background-image: url('brett-jordan-YKBy0VM53Gc-unsplash.jpg');
+ } */
+
+ .form {
+   background-color: rgb(118, 171, 224);
+   border: 5px;
+   border-style:ridge;
+   border-spacing: 10px;
+   border-color: rgb(116, 106, 126) rgb(12, 15, 20);
+   box-shadow: inset rgb(129, 161, 161) 5px 2px 1px 3px;
+ }
+
+ .error{
+     color: red;
+
+ }
+
+ textarea{
+   resize: none;
+   margin: 5px;
+ }
