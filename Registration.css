@@ -22,11 +22,14 @@ body {
  }
 
  .error{
-     color: red;
-
+     color: rgba(218, 9, 9, 0.589);
+     margin: 0px;
+     padding: 0px;
+     font-size:medium;
+     font-family:cursive;
  }
 
  textarea{
    resize: none;
-   margin: 5px;
+   margin: 0px;
  }

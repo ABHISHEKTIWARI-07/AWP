@@ -49,24 +49,24 @@
               <input
                 type="text"
                 class="form-control"
-                name="fname"
+                name="First Name"
                 id="fname"
                 placeholder="Fname"
               />
-              <label for="fname">First Name*</label>
               <span class="error"></span>
+              <label for="fname">First Name</label>
             </div>
 
             <div class="col-md-6 form-floating">
               <input
                 type="text"
                 class="form-control"
-                name="lname"
+                name="Last Name"
                 id="lname"
                 placeholder="Lname"
               />
-              <label for="lname">Last Name*</label>
               <span class="error"></span>
+              <label for="lname">Last Name</label>
             </div>
 
             
@@ -75,12 +75,12 @@
               <input
               type="password"
                 class="form-control"
-                name="password"
+                name="Password"
                 id="passwd"
                 placeholder="Password"
                 />
-                 <label for="passwd">Password </label>
                 <span class="error"></span>
+                 <label for="passwd">Password </label>
               </div>
               
               
@@ -89,68 +89,72 @@
                 <input
                 type="password"
                 class="form-control"
-                name="repassword"
+                name="Confirm Password"
                 id="repasswd"
                 placeholder="Password"
                 />
-                <label for="repasswd">Confirm Password</label>
                 <span class="error"></span>
+                <label for="repasswd">Confirm Password</label>
               </div>
               
               <div class="col-md-12 form-floating">
                 <input
                   type="email"
                   class="form-control"
-                  name="email"
+                  name="Email Address"
                   id="email"
                   placeholder="name@example.com"
                 />
-                <label for="email">Email address*</label>
-
                 <span class="error"></span>
+                <label for="email">Email address</label>
               </div>
 
               <div class="col-md-12 form-floating">
                 <input 
-                type="tel"
+                type="number"
                 class="form-control" 
-                name="mobile" 
+                name="Contact Number" 
                 id="number"
                 placeholder="***"
                 />
-                <label for="number">Mobile No*</label>
                 <span class="error"></span>
+                <label for="number">Mobile No</label>
               </div>
 
             <div class="col-12">
-              <label for="inputAddress" class="form-label">Address</label>
+              <label for="inputAddress" class="form-label">Address 1</label>
               <input
                 type="text"
                 class="form-control"
+                name="Full Address"
                 id="inputAddress"
                 class="input"
                 placeholder="Saraswati Nagar Ward no-12, Gopalganj Bihar(required)"
               />
-              <span class="addressError1"></span>
+              <span class="error"></span>
             </div>
+
             <div class="col-12">
               <label for="inputAddress2" class="form-label">Address 2</label>
               <input
                 type="text"
                 class="form-control"
+                name="Detail Address"
                 id="inputAddress2"
                 placeholder="Apartment, studio, or floor(required)"
               />
-              <span class="addressError2"></span>
+              <span class="error"></span>
             </div>
 
             <div class="col-md-6">
               <label for="inputCity" class="form-label">City</label>
               <input
                type="text"
-               class="form-control" 
+               class="form-control"
+               name="City Name"
                id="inputCity" 
                placeholder="Gopalganj(required)" />
+               <span class="error"></span>
             </div>
 
             <div class="col-md-4">
@@ -165,13 +169,19 @@
             <div class="col-md-2">
               <label for="inputZip" class="form-label">Zip</label>
               <input 
-              type="text" 
+              type="number"
               class="form-control" 
+              name="Zip code"
               id="inputZip" 
               placeholder="841428(required)" />
+              <span class="error"></span>
             </div>
 
-            <textarea placeholder="Discussion forum(required)" cols="10" rows="5"></textarea>
+            <div class="row-cols-1">
+              <legend>Comment: </legend>
+              <textarea placeholder="Discussion/Feedback forum(required)" cols="10" rows="5"></textarea>
+              <span class="giveUsFeedback"></span>
+            </div>
 
             <div class="col-12">
               <div class="form-check">
@@ -180,6 +190,7 @@
                   type="checkbox"
                   id="gridCheck"
                 />
+                <span class="verifyDetails"></span>
                 <label class="form-check-label" for="gridCheck">
                   Check your details 
                 </label>
@@ -188,7 +199,7 @@
 
             <div class="col-12 text-center">
 
-              <input type="submit" id="submit" class="btn btn-outline-success m-1 bg-gradient">
+              <input type="submit" value="register" id="submit" class="btn btn-outline-success m-1 bg-gradient">
 
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
