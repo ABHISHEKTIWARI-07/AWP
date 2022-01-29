@@ -33,3 +33,10 @@ body {
    resize: none;
    margin: 0px;
  }
+
+ #invalid{
+   margin: 0px;
+   padding: 0px;
+   text-align: center;
+   font-size:x-large;
+ }
