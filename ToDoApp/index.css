@@ -3,12 +3,15 @@ body {
     padding: 0px;
     background-color: #e0d4c5;
     display: block;
+    font-size: larger;
 }
 
 h1{
     text-align: center;
     text-decoration: underline;
-    color: #03a6cf;
+    background-color: #03a6cf;
+    position: sticky;
+    top: 0;
 }
 
 #h3{
@@ -25,17 +28,17 @@ h1{
     animation-duration: 10s;
     animation-iteration-count: infinite; 
     animation-fill-mode: both;
- }         
- @keyframes shake{ 
-    0%, 100% {transform: translateX(0);} 
-    10%, 30%, 50%, 70%, 90% {transform: translateX(-10%);} 
-    20%, 40%, 60%, 80% {transform: translateX(0px);} 
- }
+ } 
  
  .shake { 
     animation-name: shake; 
  }
 
+ @keyframes shake{ 
+    0%, 100% {transform: translateX(0);} 
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-10%);} 
+    20%, 40%, 60%, 80% {transform: translateX(0px);} 
+ }
 
 .done-true {
     text-decoration: line-through;
@@ -57,6 +60,10 @@ h1{
 
   input[type='checkbox'] {
     background-color: #2196F3;
+    width: 18px;
+    height: 18px;
+    margin-right: 15px;
+    display:inline;
   }
 
   input[type='submit'] {
@@ -101,6 +108,7 @@ h1{
       box-shadow: 1px 2px 5px 1px #807777;
       display: flex;
       justify-content:space-between;
+      font-size: x-large;
 }
 
 
@@ -137,9 +145,21 @@ h1{
 }
 
 .fa{
-  color:rgb(14, 10, 10);
+  color:rgb(41, 27, 27);
 }
 
 .fa:hover{
   color:red;
+}
+
+table{
+  border: 1px black solid;
+  border-collapse:collapse;
+}
+
+.col1{
+  width: 100%;
+}
+.col2{
+  padding: 10px;
 }

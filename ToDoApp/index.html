@@ -54,7 +54,7 @@
 
       </form>
 
-      <h3 id="h3">There is nothing in your Todo List...</h3>
+      <h3 id="h3">There is nothing in your To do List...</h3>
 
 
     <div id="box" >
@@ -65,17 +65,17 @@
 
           <table>
           
-            <tr >
+            <tr class="row1">
 
-              <td style="width: 99%;">
+              <td class="col1">
               
                 <div class="table" >
-                  <input type="checkbox" ng-model="todo.done" checked="checked">
+                  <input type="checkbox" class="checkbox" ng-model="todo.done" checked="checked">
                   <span class="done-{{todo.done}}">{{todo.text}} </span>
                 </div> 
               </td>
 
-              <td>
+              <td class="col2">
               <span ng-click="removeItem($index)" class="fa fa-remove"></span>
               </td>
 

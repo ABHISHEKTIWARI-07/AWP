@@ -5,7 +5,9 @@
     $scope.todos = [
       {text:'AngularJS', done:false},
       {text:'Mobile Application Development', done:false},
-      {text:'Mathematics', done:true}];
+      {text:'Mathematics', done:true},
+      {text:'Cryptography And Network Security', done:false},
+      {text:'Software Engineering', done:false}];
  
     $scope.addTodo = function() {
 
@@ -18,39 +20,43 @@
       }
 
       else{
+
+      //   if(search.value.trim()==$scope.index.text){
+      //   err.innerHTML='***You have already mentioned...'
+      //   err.style.color = 'red'
+      // }
+
         $scope.todos.push({text:$scope.todoText, done:false});
         $scope.todoText = '';
         err.innerHTML='';
       }
-
-      if(search.value.trim()==$scope.index.text){
-        err.innerHTML='***You have already mentioned...'
-        err.style.color = 'red'
-      }
      
     };
  
-    $scope.remaining = function() {
+    $scope.remaining = ()=> {
       var count = 0;
+      var h3 = document.getElementById('h3');
+      let box = document.getElementById('box');
 
       if($scope.todos.length==0){
-        var h3 = document.getElementById('h3');
         h3.style.display = 'block';
         h3.style.textAlign = 'center';
-
-        let box = document.getElementById('box');
         box.style.visibility = 'hidden';
-        
       }
 
       else{
-        let box = document.getElementById('box');
-
+        h3.style.display='none';
         box.style.visibility = 'visible';
       }
 
-      angular.forEach($scope.todos, function(todo) {
-        count += todo.done ? 0 : 1;
+      angular.forEach($scope.todos, todo=> {
+        // count += todo.done ? 0 : 1;
+
+        if(todo.done){
+          count+=0;
+        }
+        else count+=1;
+
       });
       return count;
     };

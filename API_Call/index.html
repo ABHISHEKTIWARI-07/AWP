@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Based Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+</head>
+<body class="bg-info">
+
+    <div class="m-5 grid container-fluid test-center" ng-app="myApp" ng-controller="customersCtrl">
+
+      <!-- <input class="g-col-12" ng-model="search" type="text" placeholder="Enter Exchange Name (bianance etc)"> -->
+
+      <div class="input-group m-3">
+        <span class="input-group-text" id="basic-addon3">Search Exchange Name</span>
+        <input ng-model="search" type="text" class="form-control" id="basic-url">
+      </div>
+
+        <div class="">
+          <ul class="list-group list-group-flush text-center">
+            <li class="list-group-item" ng-repeat="x in myData | filter:search">
+              {{x.trade_volume_24h_btc_normalized+','+x.trust_score_rank+','+x.name + ', ' +  x.year_established }}<img src="{{x.image}}" alt="loading">
+            </li>
+          </ul>
+        
+        </div>
+
+
+    <script src="module.js"></script>
+</body>
+</html>
