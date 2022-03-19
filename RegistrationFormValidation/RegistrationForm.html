@@ -31,35 +31,32 @@
 
 
     <div class="container-fluid">
+
       <div class="row" >
 
-        <!-- <div class="col-6 text-white left"></div> -->
+          <div class="col-6 left">
+            <img src="/RegistrationFormValidation/image.svg" alt="">
+          </div>
 
 
-        <div class="col-sm-12 p-3 mx-auto form">  
-          <!-- <h1 class="text-center p-3 text-primary">REGISTRATION FORM</h1> -->
-          <div class="text-center bg-primary"><h1 class="text-center text-white">REGISTRATION FORM <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
-            <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5ZM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46Z"/>
-            <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46l-3.892-1.556Z"/>
-          </svg></h1>
-        </div>
+        <div class="col-6 p-3 mx-auto form">  
+          <h1 class="text-center">Registration Form</h1>
 
-        <p id="invalid"></p>
+          <p id="invalid"></p>
 
           <form class="row g-3" method="get" name="myForm" id="myForm">
 
             <div class="col-md-6 form-floating">
-              
               <input
                 type="text"
                 class="form-control"
                 name="First Name"
                 id="fname"
-                placeholder=" Fname"
-              />
-              <span class="error"></span>
-              <label for="fname">First Name</label>
+                placeholder="Fname"/>
+               <span class="error"></span>
+               <label for="fname">First Name</label>
             </div>
+
 
             <div class="col-md-6 form-floating">
               <input
@@ -67,63 +64,59 @@
                 class="form-control"
                 name="Last Name"
                 id="lname"
-                placeholder="Lname"
-              />
+                placeholder="Lname"/>
               <span class="error"></span>
               <label for="lname">Last Name</label>
             </div>
 
             
             <div class="col-md-6 form-floating">
-              
               <input
-              type="password"
+                type="password"
                 class="form-control"
                 name="Password"
                 id="password"
-                placeholder="Password"
-                />
+                placeholder="Password"/>
                 <span class="error"></span>
-                 <label for="password">Password </label>
-              </div>
+                <label for="password">Password </label>
+            </div>
               
               
-              <div class="col-md-6 form-floating">
-                
-                <input
+            <div class="col-md-6 form-floating">
+              <input
                 type="password"
                 class="form-control"
                 name="Confirm Password"
                 id="repassword"
-                placeholder="Password"
-                />
+                placeholder="Password"/>
                 <span class="error"></span>
                 <label for="repassword">Confirm Password</label>
-              </div>
+            </div>
               
-              <div class="col-md-12 form-floating">
+
+            <div class="col-md-12 form-floating">
                 <input
                   type="email"
                   class="form-control"
                   name="Email Address"
                   id="email"
-                  placeholder="name@example.com"
-                />
+                  placeholder="name@example.com"/>
                 <span class="error"></span>
                 <label for="email">Email address</label>
-              </div>
+            </div>
 
-              <div class="col-md-12 form-floating">
-                <input 
+
+            <div class="col-md-12 form-floating">
+              <input 
                 type="number"
                 class="form-control" 
                 name="Contact Number" 
                 id="number"
-                placeholder="***"
-                />
+                placeholder="***"/>
                 <span class="error"></span>
                 <label for="number">Mobile No</label>
-              </div>
+            </div>
+
 
             <div class="col-12">
               <label for="inputAddress" class="form-label">Address 1</label>
@@ -133,10 +126,10 @@
                 name="Full Address"
                 id="inputAddress"
                 class="input"
-                placeholder="Saraswati Nagar Ward no-12, Gopalganj Bihar(required)"
-              />
+                placeholder="Saraswati Nagar Ward no-12, Gopalganj Bihar(required)"/>
               <span class="error"></span>
             </div>
+
 
             <div class="col-12">
               <label for="inputAddress2" class="form-label">Address 2</label>
@@ -145,10 +138,10 @@
                 class="form-control"
                 name="Detail Address"
                 id="inputAddress2"
-                placeholder="Apartment, studio, or floor(required)"
-              />
+                placeholder="Apartment, studio, or floor(required)"/>
               <span class="error"></span>
             </div>
+
 
             <div class="col-md-6">
               <label for="inputCity" class="form-label">City</label>
@@ -161,6 +154,7 @@
                <span class="error"></span>
             </div>
 
+
             <div class="col-md-4">
               <label for="inputState" class="form-label">State</label>
               <select id="inputState" class="form-select">
@@ -169,6 +163,7 @@
                 <option>...</option>
               </select>
             </div>
+
 
             <div class="col-md-2">
               <label for="inputZip" class="form-label">Zip</label>
@@ -181,45 +176,29 @@
               <span class="error"></span>
             </div>
 
+
             <div class="row-cols-1">
               <legend>Comment: </legend>
               <textarea placeholder="Discussion/Feedback forum(required)" cols="10" rows="5"></textarea>
               <span class="giveUsFeedback"></span>
             </div>
 
-            <!-- <div class="col-12">
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="gridCheck"
-                />
-                <span class="verifyDetails"></span>
-                <label class="form-check-label" for="gridCheck">
-                  Check your details 
-                </label>
-              </div>
-            </div> -->
 
-            <div class="col-12 text-center">
-
-              <input type="submit" value="register" id="submit" class="btn btn-outline-success m-1 bg-gradient">
-
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
-                <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
-                </svg> -->
-
+            <div class="d-flex justify-content-between">
+              <input type="submit" value="register" id="submit" class="btn btn btn-outline-success">
+              <button type="reset()" class="btn btn-outline-danger">reset</button>
             </div>
+
           </form>
+
         </div>
 
-
       </div>
-    </div>
 
+    </div>
 
     <script src="Registration.js"></script>
 
   </body>
+
 </html>
