@@ -1,11 +1,14 @@
 const input=document.querySelectorAll('input');
 const myForm = document.getElementById('myForm');
+let invalidInputs = document.getElementById('invalid');
+let showErr = document.getElementsByTagName('span');
+
 
 input.forEach((el)=>{
   el.addEventListener('blur',(event)=>{
     event.preventDefault();
 
-    let showErr = el.nextElementSibling;
+     showErr = el.nextElementSibling;
 
     console.log(showErr);
 
@@ -22,6 +25,7 @@ input.forEach((el)=>{
         success(el,showErr);
       }
       else notValid(el,showErr);
+
     }
 
     else if(el.type=='number'){      
@@ -44,7 +48,7 @@ input.forEach((el)=>{
       success(el,showErr);
     }
 
-    verifyFormField(event.target);
+    verifyFormField(event.target);   ////// changes here 
 
   });
 });
@@ -53,18 +57,20 @@ input.forEach((el)=>{
 
 myForm.addEventListener('submit',(event)=>{
   event.preventDefault();
-  // confirm("Have you filled the details");
 
   if (!verifyAllFields()) {
     alert("successfully Registered...");
+    invalidInputs.innerHTML = "successfully registered";
+    invalidInputs.style.color = "green";
+    
     document.myForm.reset();
-	} else {
-		let invalidInputs = document.getElementById('invalid');
+
+	}
+  
+  else {
     invalidInputs.innerHTML = "Please fill all the inputs...";
-    // invalidInputs.style.backgroundColor = "red";
     invalidInputs.style.color = "red";
 	}
-
 })
 
 const verifyAllFields = ()=>{
@@ -73,7 +79,6 @@ const verifyAllFields = ()=>{
   	if(!verifyFormField(element)){
       flag = false;
     } 
-    // else flag = true;
 	});
   return flag;
 
@@ -82,8 +87,6 @@ const verifyAllFields = ()=>{
 const verifyFormField = (el) => {
 	console.log(el);
 	let formFlag = true;
-  let showErr = document.getElementsByTagName('span');
-
 
   if(el.value.trim()==''){
     blurError(el,showErr);
@@ -91,7 +94,7 @@ const verifyFormField = (el) => {
   }
 
   else if(el.type=='submit'){
-    el.style.border='none';
+    el.style.border='1px solid green';
   }
 
    else if(el.type == 'email'){
@@ -143,15 +146,15 @@ function notValid(element, showErr) {
 }
 
 const blurError = (element,showErr)=>{
-  element.style.border='3px red solid';
+  element.style.border='1px red solid';
   showErr.innerHTML='*please enter '+element.name;
 }
 
 
 const success = (element,showErr)=>{
   element.style.border='';
-  element.style.borderRight='5px green solid';
-  element.style.borderBottom='3px green solid';
+  element.style.borderRight='1px green solid';
+  element.style.borderBottom='1px green solid';
   showErr.innerHTML="";
 }
 

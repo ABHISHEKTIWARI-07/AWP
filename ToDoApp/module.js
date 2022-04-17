@@ -20,11 +20,6 @@
 
       else{
 
-      //   if(search.value.trim()==$scope.index.text){
-      //   err.innerHTML='***You have already mentioned...'
-      //   err.style.color = 'red'
-      // }
-
         $scope.todos.push({text:$scope.todoText, done:false});
         $scope.todoText = '';
         err.innerHTML='';

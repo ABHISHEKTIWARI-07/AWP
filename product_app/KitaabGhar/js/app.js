@@ -36,6 +36,10 @@ app.config(function($routeProvider){
         controller : "addnewbook.controller"
     })
 
+    .when("/auth",{
+        templateUrl:"/RegistrationFormValidation/RegistrationForm.html"
+    })
+
     .otherwise({
         template : `<strong> The Content is not available</strong>`
     });

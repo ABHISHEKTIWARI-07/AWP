@@ -1,5 +1,6 @@
 angular
     .module("myApp.controller",[])
+    
     .controller(
         "book.controller",
         function($scope,$rootScope){
@@ -21,24 +22,25 @@ angular
 
     .controller(
         "bookview",
-        ['$scope', '$routeParams', 'MyElements', function($scope, $routeParams, MyElements) {
-            MyElements.get({'bookName': $routeParams.newbook.bname, description:$rootScope.newBook.description
-            },
-             function(elm) {
-                $scope.elm = elm;
-            })
-    }])
+        function ($scope, $rootScope, $routeParams) {
+            let bookId = $routeParams.bookId;
+      
+            $scope.book = $rootScope.myData.find((book) => {
+              return book.bookId == bookId;
+            });
+        }
+    )
 
     .controller(
         "addnewbook.controller",
         function($rootScope){
             $rootScope.addbook = function(){
-                $rootScope.myData.push({bookId:$rootScope.newBook.bookid,bookName:$rootScope.newBook.bname,
-                                                authorName:$rootScope.newBook.aname,
-                                                description:$rootScope.newBook.description,
-                                                price:$rootScope.newBook.price
+                $rootScope.myData.push({bookId:$rootScope.bookid,bookName:$rootScope.bname,
+                                                authorName:$rootScope.aname,
+                                                description:$rootScope.description,
+                                                price:$rootScope.price
                 })
-                console.log($rootScope.myData)
+                console.log($rootScope.myData);
             }
         }
         
@@ -59,4 +61,9 @@ angular
         }
     )
 
-    .controller
+    .controller(
+        "addbook.controller",
+        function($scope){
+            
+        }
+    )

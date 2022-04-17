@@ -1,0 +1,102 @@
+<main class="container-fluid content-wrapper">
+  <div class="row content-header mb-4">
+    <div class="col-md-8">
+      <h1>Contact List</h1>
+    </div>
+    <div class="col-md-4 align-items-center">
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text">Filter: </span>
+        <div class="btn-group btn-group-sm" role="group">
+          <input
+            type="radio"
+            class="btn-check"
+            name="filter"
+            id="filter1"
+            ng-model="searchType"
+            value="name"
+          />
+          <label class="btn btn-outline-primary" for="filter1">Name</label>
+          <input type="radio" class="btn-check" name="filter" id="filter2" ng-model="searchType" value="city"/>
+          <label class="btn btn-outline-primary" for="filter2">City</label>
+          <input type="radio" class="btn-check" name="filter" id="filter3" ng-model="searchType" value="state"/>
+          <label class="btn btn-outline-primary" for="filter3">State</label>
+        </div>
+        <input type="text" class="form-control" id="filter-text" ng-model="searchText"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-primary card-outline mb-4">
+    <div class="card-header">Contact List</div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th
+            ng-click="customOrderBy('title')"
+            ng-class="{activeHeader:orderByField==='title', reverse:reverseOrder}"
+          >
+            Person
+          </th>
+          <th
+            ng-click="customOrderBy('address.city')"
+            ng-class="{activeHeader:orderByField==='address.city', reverse:reverseOrder}"
+          >
+            City
+          </th>
+          <th
+            ng-click="customOrderBy('address.state')"
+            ng-class="{activeHeader:orderByField==='address.state', reverse:reverseOrder}"
+          >
+            State
+          </th>
+          <th
+            ng-click="customOrderBy('address.country')"
+            ng-class="{activeHeader:orderByField==='address.country', reverse:reverseOrder}"
+          >
+            Country
+          </th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="contact in contacts | orderBy:orderByField:reverseOrder | searchFilter:searchType:searchText">
+          <td>{{$index+1}}</td>
+          <td>
+            {{contact.title}} {{contact.first_name}} {{contact.last_name}}
+          </td>
+          <td>{{contact.address.city}}</td>
+          <td>{{contact.address.state}}</td>
+          <td>{{contact.address.country}}</td>
+          <td width="150px">
+            <div
+              class="btn-group btn-group-sm"
+              role="group"
+              aria-label="Basic example"
+            >
+              <a
+                href="#!/contact-detail/{{contact.id}}"
+                class="btn btn-sm custom-secondary-bg-color"
+                title="Details"
+                ><i class="far fa-id-card"></i
+              ></a>
+              <a
+                href="#!/edit-contact/{{contact.id}}"
+                class="btn btn-sm btn-warning"
+                title="Edit"
+                ><i class="far fa-edit"></i
+              ></a>
+              <button
+                ng-click="deleteContact(contact.id)"
+                class="btn btn-sm btn-danger"
+                title="Delete"
+              >
+                <i class="far fa-trash-alt"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
